@@ -1,8 +1,11 @@
 from django.db import models
 
-from wagtail.core.models import Page
+from modelcluster.fields import ParentalKey
+
+from wagtail.core.models import Page, Orderable
 from wagtail.core.fields import RichTextField
-from wagtail.admin.edit_handlers import FieldPanel
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel
+from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
 
@@ -34,4 +37,18 @@ class RecipesPage(Page):
         FieldPanel('date'),
         FieldPanel('utensils'),
         FieldPanel('description', classname="full"),
+        InlinePanel('gallery_images', label="Gallery images")
+    ]
+
+
+class RecipesPageGalleryImage(Orderable):
+    page = ParentalKey(RecipesPage, on_delete=models.CASCADE, related_name='gallery_images')
+    image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption')
     ]
