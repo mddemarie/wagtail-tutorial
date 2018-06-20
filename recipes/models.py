@@ -13,19 +13,25 @@ class RecipesIndexPage(Page):
         FieldPanel('intro', classname='full')
     ]
 
+    # def get_context(self, request):
+    #     context = super().get_context(request)
+    #     recipepages = self.get_children().live().order_by('-first_published_at')
+    #     context['recipepages'] = recipepages
+    #     return context
+
 
 class RecipesPage(Page):
-    date = models.DateField('Recipe date')
-    intro = models.CharField(max_length=250)
-    body = RichTextField(blank=True)
+    date = models.DateField("recipe date")
+    utensils = models.CharField(max_length=250)
+    description = RichTextField(blank=True)
 
     search_fields = Page.search_fields + [
-        index.SearchField('intro'),
-        index.SearchField('body'),
+        index.SearchField('utensils'),
+        index.SearchField('description'),
     ]
 
     content_panels = Page.content_panels + [
         FieldPanel('date'),
-        FieldPanel('intro'),
-        FieldPanel('body', classname='full')
+        FieldPanel('utensils'),
+        FieldPanel('description', classname="full"),
     ]
