@@ -16,17 +16,24 @@ class RecipesIndexPage(Page):
         FieldPanel('intro', classname='full')
     ]
 
-    # def get_context(self, request):
-    #     context = super().get_context(request)
-    #     recipepages = self.get_children().live().order_by('-first_published_at')
-    #     context['recipepages'] = recipepages
-    #     return context
+    def get_context(self, request):
+        context = super().get_context(request)
+        recipepages = self.get_children().live().order_by('-first_published_at')
+        context['recipepages'] = recipepages
+        return context
 
 
 class RecipesPage(Page):
     date = models.DateField("recipe date")
     utensils = models.CharField(max_length=250)
     description = RichTextField(blank=True)
+
+    def main_page(self):
+        gallery_item = self.gallery_item.first()
+        if gallery_item:
+            return gallery_item.image
+        else:
+            return None
 
     search_fields = Page.search_fields + [
         index.SearchField('utensils'),
