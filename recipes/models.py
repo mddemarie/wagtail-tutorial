@@ -1,10 +1,12 @@
 from django.db import models
 
 from modelcluster.fields import ParentalKey
+from modelcluster.contrib.taggit import ClusterTaggableManager
+from taggit.models import TaggedItemBase
 
 from wagtail.core.models import Page, Orderable
 from wagtail.core.fields import RichTextField
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
@@ -23,10 +25,19 @@ class RecipesIndexPage(Page):
         return context
 
 
+class RecipesPageTag(TaggedItemBase):
+    content_object = ParentalKey(
+        'RecipesPage',
+        related_name='tagged_items',
+        on_delete=models.CASCADE
+    )
+
+
 class RecipesPage(Page):
     date = models.DateField("recipe date")
     utensils = models.CharField(max_length=250)
     description = RichTextField(blank=True)
+    tags = ClusterTaggableManager(through=RecipesPageTag, blank=True)
 
     def main_page(self):
         gallery_item = self.gallery_item.first()
@@ -41,6 +52,10 @@ class RecipesPage(Page):
     ]
 
     content_panels = Page.content_panels + [
+        MultiFieldPanel([
+            FieldPanel('date'),
+            FieldPanel('tags'),
+        ], heading='Recipe information'),
         FieldPanel('date'),
         FieldPanel('utensils'),
         FieldPanel('description', classname="full"),
