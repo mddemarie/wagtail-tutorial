@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52b553e7-a225-4b54-bca3-3e81622dd9a8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/recipes/templates/recipes/recipes_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/templates/recipes/recipes_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipes/templates/recipes/recipes_tag_index_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -101,8 +103,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recipes/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+            <state relative-caret-position="190">
+              <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -110,7 +112,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recipes_page.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="recipes_tag_index_page.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/recipes/templates/recipes/recipes_tag_index_page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recipes_page.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recipes/templates/recipes/recipes_page.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
@@ -174,6 +185,7 @@
       <find>TaggedItemBase</find>
       <find>Orderable</find>
       <find>index</find>
+      <find>get_context</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -188,8 +200,9 @@
         <option value="$PROJECT_DIR$/mysite/settings/production.py" />
         <option value="$PROJECT_DIR$/home/templates/home/home_page.html" />
         <option value="$PROJECT_DIR$/recipes/templates/recipes/recipes_index_page.html" />
-        <option value="$PROJECT_DIR$/recipes/models.py" />
         <option value="$PROJECT_DIR$/recipes/templates/recipes/recipes_page.html" />
+        <option value="$PROJECT_DIR$/recipes/templates/recipes/recipes_tag_index_page.html" />
+        <option value="$PROJECT_DIR$/recipes/models.py" />
       </list>
     </option>
   </component>
@@ -264,6 +277,13 @@
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
               <item name="recipes" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="recipes" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="recipes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
@@ -463,15 +483,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recipes/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/recipes/migrations/0004_recipestagindexpage.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/recipes/templates/recipes/recipes_page.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -480,6 +493,23 @@
           <folding>
             <element signature="e#377#410#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recipes/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recipes/templates/recipes/recipes_tag_index_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>

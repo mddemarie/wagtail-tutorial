@@ -33,6 +33,17 @@ class RecipesPageTag(TaggedItemBase):
     )
 
 
+class RecipesTagIndexPage(Page):
+
+    def get_context(self, request):
+        tag = request.GET.get('tag')
+        recipespages = RecipesPage.objects.filter(tags__name=tag)
+
+        context = super().get_context(request)
+        context['recipepages'] = recipespages
+        return context
+
+
 class RecipesPage(Page):
     date = models.DateField("recipe date")
     utensils = models.CharField(max_length=250)
