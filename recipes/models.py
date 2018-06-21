@@ -1,6 +1,7 @@
+from django import forms
 from django.db import models
 
-from modelcluster.fields import ParentalKey
+from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 
@@ -9,6 +10,7 @@ from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
+from wagtail.snippets.models import register_snippet
 
 
 class RecipesIndexPage(Page):
@@ -49,6 +51,7 @@ class RecipesPage(Page):
     utensils = models.CharField(max_length=250)
     description = RichTextField(blank=True)
     tags = ClusterTaggableManager(through=RecipesPageTag, blank=True)
+    categories = ParentalManyToManyField('recipes.RecipesCategory', blank=True)
 
     def main_page(self):
         gallery_item = self.gallery_item.first()
@@ -66,8 +69,8 @@ class RecipesPage(Page):
         MultiFieldPanel([
             FieldPanel('date'),
             FieldPanel('tags'),
+            FieldPanel('categories', widget=forms.CheckboxSelectMultiple)
         ], heading='Recipe information'),
-        FieldPanel('date'),
         FieldPanel('utensils'),
         FieldPanel('description', classname="full"),
         InlinePanel('gallery_images', label="Gallery images")
@@ -85,3 +88,22 @@ class RecipesPageGalleryImage(Orderable):
         ImageChooserPanel('image'),
         FieldPanel('caption')
     ]
+
+@register_snippet
+class RecipesCategory(models.Model):
+    name = models.CharField(max_length=255)
+    icon = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True,
+        on_delete=models.SET_NULL, related_name='+'
+    )
+
+    panels = [
+        FieldPanel('name'),
+        ImageChooserPanel('icon')
+    ]
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'recipe categories'
