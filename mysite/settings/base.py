@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'modelcluster',
     'taggit',
+    'modeltranslation',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -126,6 +127,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+gettext = lambda s: s
+LANGUAGES = (
+    ('en', gettext('English')),
+    ('de', gettext('German')),
+    ('cs', gettext('Czech')),
+    ('es', gettext('Spanish')),
+)
 
 TIME_ZONE = 'UTC'
 

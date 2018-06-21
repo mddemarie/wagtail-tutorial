@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52b553e7-a225-4b54-bca3-3e81622dd9a8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/recipes/templates/recipes/recipes_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/templates/recipes/recipes_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipes/translation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings/base.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -122,8 +124,8 @@
       <file leaf-file-name="recipes_page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recipes/templates/recipes/recipes_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            <state relative-caret-position="355">
+              <caret line="24" column="51" lean-forward="true" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
               <folding>
                 <element signature="e#424#447#0#HTML" expanded="true" />
                 <element signature="e#377#410#0#HTML" expanded="true" />
@@ -145,7 +147,7 @@
         <entry file="file://$PROJECT_DIR$/mysite/settings/base.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="258">
-              <caret line="78" column="57" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="57" />
+              <caret line="79" column="57" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -278,13 +280,6 @@
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
               <item name="recipes" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="recipes" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="recipes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
@@ -449,7 +444,7 @@
     <entry file="file://$PROJECT_DIR$/mysite/settings/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
-          <caret line="78" column="57" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="57" />
+          <caret line="79" column="57" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -506,8 +501,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recipes/templates/recipes/recipes_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state relative-caret-position="355">
+          <caret line="24" column="51" lean-forward="true" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
           <folding>
             <element signature="e#424#447#0#HTML" expanded="true" />
             <element signature="e#377#410#0#HTML" expanded="true" />
