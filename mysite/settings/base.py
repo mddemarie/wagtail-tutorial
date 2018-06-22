@@ -24,6 +24,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'home',
     'search',
 
@@ -41,7 +42,6 @@ INSTALLED_APPS = [
 
     'modelcluster',
     'taggit',
-    'modeltranslation',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -137,6 +137,8 @@ LANGUAGES = (
 )
 
 TIME_ZONE = 'UTC'
+
+MODELTRANSLATION_DEBUG = True
 
 USE_I18N = True
 
