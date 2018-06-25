@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.utils.translation import ugettext_lazy as _
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
@@ -55,6 +56,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -66,7 +68,7 @@ MIDDLEWARE = [
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
@@ -79,6 +81,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.i18n',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -130,15 +133,25 @@ LANGUAGE_CODE = 'en-us'
 
 gettext = lambda s: s
 LANGUAGES = (
-    ('en', gettext('English')),
-    ('de', gettext('German')),
-    ('cs', gettext('Czech')),
-    ('es', gettext('Spanish')),
+    ('en', _('English')),
+    ('de', _('German')),
+    ('cs', _('Czech')),
+    ('es', _('Spanish')),
 )
+
+LOCALE_PATHS = [
+    os.path.realpath(os.path.join(BASE_DIR, 'locale'))
+]
+
+print(LOCALE_PATHS)
 
 TIME_ZONE = 'UTC'
 
 MODELTRANSLATION_DEBUG = True
+MODELTRANSLATION_FALLBACK_LANGUAGES = ()
+MODELTRANSLATION_ENABLE_FALLBACKS = False
+MODELTRANSLATION_AUTO_POPULATE = False
+MODELTRANSLATION_DEFAULT_LANGUAGE = None
 
 USE_I18N = True
 
