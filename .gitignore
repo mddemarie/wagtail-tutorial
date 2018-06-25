@@ -1,8 +1,0 @@
-db.sqlite3
-venv
-*.pyc
-*.pyo
-**/__pycache__/
-*.mo
-.DS_Store
-/.idea
