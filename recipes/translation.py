@@ -19,14 +19,6 @@ class RecipesIndexPageTranslationOptions(TranslationOptions):
     fields = ('title', 'intro', 'slug')
 
 
-class RecipesIndexPageAdmin(TranslationAdmin):
-    pass
-
-
-admin.site.register(RecipesIndexPage, RecipesIndexPageAdmin)
-
-
-
 # fields = ('title', 'intro', 'draft_title', 'slug', 'content_type', 'live',
 #               'has_unpublished_changes', 'url_path', 'owner', 'seo_title',
 #               'show_in_menus_default', 'show_in_menus', 'search_description', 'go_live_at'
