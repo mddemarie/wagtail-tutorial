@@ -1,6 +1,6 @@
 aspy.yaml==1.1.1
 cached-property==1.4.3
-certifi==2018.4.16
+certifi==2022.12.7
 cfgv==1.1.0
 chardet==3.0.4
 docker==3.4.0
